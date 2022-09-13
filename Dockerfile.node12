@@ -29,7 +29,8 @@ RUN apk --no-cache add openjdk11-jre bash python2 git openssh && \
     firebase setup:emulators:pubsub && \
     firebase setup:emulators:storage && \
     firebase -V && \
-    java -version
+    java -version && \
+    chown -R node:node $HOME
 USER node
 VOLUME $HOME/.cache
 WORKDIR $HOME
