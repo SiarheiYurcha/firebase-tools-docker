@@ -30,7 +30,8 @@ RUN apk --no-cache add openjdk11-jre bash python2 git openssh && \
     firebase setup:emulators:storage && \
     firebase -V && \
     java -version && \
-    chown -R node:node $HOME
+    chown -R node:node $HOME && \
+    git config --global --add safe.directory '*'
 USER node
 VOLUME $HOME/.cache
 WORKDIR $HOME
